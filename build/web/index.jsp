@@ -1,5 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="Suporte.Tabelas" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Suporte.Paciente" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,5 +26,13 @@
         
         <br>
         <%=new Tabelas().getImc() %>
+        
+        <%
+            Paciente p = new Paciente();
+            p.setNome("Matheus");
+            
+            out.println("Nome: " + p.getNome());
+        %>
+        
     </body>
 </html>
