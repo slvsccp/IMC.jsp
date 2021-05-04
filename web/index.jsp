@@ -1,3 +1,6 @@
+<%@page import="java.util.LinkedList"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page import="Suporte.Tabelas" %>
 <%@page import="Suporte.Paciente" %>
@@ -25,13 +28,37 @@
         </div>
         
         <br>
-        <%=new Tabelas().getImc() %>
+        <%//=new Tabelas().getImc() %>
+            
+            <% 
+                out.print(new Tabelas().nivel_Imc(7));
+            %>
+            <% 
+                out.print(new Tabelas().nivel_Imc());
+            %>
         
         <%
-            Paciente p = new Paciente();
-            p.setNome("Matheus");
+            List<Paciente> p1 = new LinkedList();
+            //List<Paciente> p1 = new ArrayList<Paciente> ();
             
-            out.println("Nome: " + p.getNome());
+            p1.add(new Paciente("Matheus", "123.456.789-12", 21) );
+            p1.add(new Paciente("João", "123.456.789-12", 25) );
+            p1.add(new Paciente("Guilherme", "123.456.789-12", 33) );
+            
+            for(Paciente valor : p1){
+                out.print("<hr>Nome: " + valor.getNome() + "<br>");
+                out.print(valor.getCpf() + "<br>");
+                out.print("Idade: " + valor.getIdade() + "<br>");
+            }
+            
+            
+            
+            
+            /*Paciente p = new Paciente("Matheus", "123.456.789-12", 21);
+            
+            out.println("Nome: " + p.getNome() + "<br>");
+            out.println("CPF: " + p.getCpf() + "<br>");
+            out.println("Idade: " + p.getIdade());*/
         %>
         
     </body>

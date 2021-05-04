@@ -5,9 +5,15 @@ public class Paciente {
     private String nome, cpf, sexo, tipo_sangue;
     private float peso, altura;
     private int idade, pressao_min, pressao_max;
+
+    //Construtor
+    public Paciente(String nome, String cpf, int idade) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.idade = idade;
+    }
     
     // Método GET e SET
-
     public String getNome() {
         return nome;
     }
@@ -79,7 +85,5 @@ public class Paciente {
     public void setPressao_max(int pressao_max) {
         this.pressao_max = pressao_max;
     }
-    
-    
     
 }
